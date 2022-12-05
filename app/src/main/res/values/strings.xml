@@ -4,7 +4,7 @@
     <string name="admin_receiver_status_disabled">Device Admin Disabled</string>
     <string name="admin_receiver_status">Device Admin Status</string>
     <string name="device_admin">Enable device admin</string>
-    <string name="get_dns">Get current DNS servers</string>
+    <string name="get_dns">Loading current DNS settings...</string>
     <string name="set_dns">Set DNS server</string>
     <string name="dns_adguard_com">dns.adguard.com</string>
     <string name="disable_device_admin">Disable device admin</string>

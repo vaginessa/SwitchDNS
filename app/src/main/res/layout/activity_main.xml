@@ -4,38 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/parent_layout"
+    >
 
-    <Button
-        android:id="@+id/device_admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/device_admin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/disable_device_admin"
-        />
-
-    <Button
-        android:id="@+id/disable_device_admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/disable_device_admin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/get_dns_button"
-        />
-
-    <Button
-        android:id="@+id/get_dns_button"
+    <TextView
+        android:id="@+id/dns_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/get_dns"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/disable_device_admin"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/text_dns_server"
         />
 
@@ -43,24 +23,34 @@
         android:id="@+id/text_dns_server"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/get_dns_button"
-        app:layout_constraintBottom_toBottomOf="@id/set_dns_button"
+        android:autofillHints="dns.adguard.com"
         android:hint="@string/dns_adguard_com"
-        android:text="@string/dns_adguard_com"
         android:inputType="text"
-        android:autofillHints="dns.adguard.com" />
+        android:text="@string/dns_adguard_com"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/switch1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dns_status" />
 
-    <Button
-        android:id="@+id/set_dns_button"
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/set_dns"
+        android:text="Private DNS"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text_dns_server"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dns_status" />
+
+    <Button
+        android:id="@+id/device_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dns_server"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/text_dns_server"
+        android:text="placeholder"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
