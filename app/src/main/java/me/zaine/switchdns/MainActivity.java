@@ -147,4 +147,9 @@ public class MainActivity extends AppCompatActivity {
         });
         setDnsThread.start();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

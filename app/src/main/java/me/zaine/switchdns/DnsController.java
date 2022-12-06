@@ -9,11 +9,13 @@ import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.util.Log;
 
 public class DnsController {
 
     protected int setDnsHost(DevicePolicyManager devicePolicyManager, ComponentName componentName, String host){
         try {
+            Log.i("QsTile","Setting Private DNS to "+host+" ...");
             return devicePolicyManager.setGlobalPrivateDnsModeSpecifiedHost(componentName, host);
         } catch (Exception e) {
             e.printStackTrace();
@@ -22,6 +24,7 @@ public class DnsController {
     }
 
     protected int unsetDnsHost(DevicePolicyManager devicePolicyManager, ComponentName componentName){
+        Log.i("QsTile","Unsetting Private DNS...");
         return devicePolicyManager.setGlobalPrivateDnsModeOpportunistic(componentName);
     }
 
