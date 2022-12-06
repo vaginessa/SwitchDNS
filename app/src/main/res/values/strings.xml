@@ -8,4 +8,5 @@
     <string name="set_dns">Set DNS server</string>
     <string name="dns_adguard_com">dns.adguard.com</string>
     <string name="disable_device_admin">Disable device admin</string>
+    <string name="tile_label">Toggle DNS</string>
 </resources>
